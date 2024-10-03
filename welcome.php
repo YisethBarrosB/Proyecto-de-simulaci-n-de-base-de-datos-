@@ -15,7 +15,7 @@ $posts = isset($_COOKIE['posts']) ? json_decode($_COOKIE['posts'], true) : [];
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['titulo']) && isset($_POST['descripcion'])) {
     $nuevo_post = [
         'titulo' => $_POST['titulo'],
-        'contenido' => $_POST['descripcion'],
+        'descripcion' => $_POST['descripcion'],
         
 
     $posts[] = $nuevo_post;
