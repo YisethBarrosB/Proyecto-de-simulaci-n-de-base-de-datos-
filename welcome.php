@@ -12,13 +12,11 @@ if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
 $posts = isset($_COOKIE['posts']) ? json_decode($_COOKIE['posts'], true) : [];
 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['titulo']) && isset($_POST['contenido'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['titulo']) && isset($_POST['descripcion'])) {
     $nuevo_post = [
         'titulo' => $_POST['titulo'],
-        'contenido' => $_POST['contenido'],
-        'autor' => $username,
-        'fecha' => date('Y-m-d H:i:s')
-    ];
+        'contenido' => $_POST['descripcion'],
+        
 
     $posts[] = $nuevo_post;
 
